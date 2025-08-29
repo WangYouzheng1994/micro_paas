@@ -20,12 +20,21 @@ class RedisServiceChecker:
         self.thresholds = thresholds or DEFAULT_THRESHOLDS
 
     def check_all(self):
+        """
+        监测配置文件中的所有节点
+        :return:
+        """
         alerts = []
         for inst in self.instances:
             alerts.extend(self.check_instance(inst))
         return alerts
 
     def check_instance(self, inst):
+        """
+        监测指定的节点
+        :param inst:
+        :return:
+        """
         alerts = []
         try:
             r = redis.StrictRedis(
