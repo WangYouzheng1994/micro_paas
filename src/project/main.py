@@ -27,7 +27,7 @@ def main():
 
 
 def run_checks(config):
-    """test执行监控任务"""
+    """本地调试执行监控任务"""
     # config = ConfigLoader().config
     sender = build_sender(config.get("message", {}))
 
@@ -51,7 +51,7 @@ def run_checks(config):
 """
 if __name__ == "__main__":
     main()
-    # test()
+    # test() 本地调试用
 
 
 def test():

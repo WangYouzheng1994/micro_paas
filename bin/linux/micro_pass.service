@@ -1,0 +1,14 @@
+[Unit]
+Description=Micro-PaaS Monitoring Service
+After=network.target
+
+[Service]
+User=micro-paas
+Group=micro-paas
+ExecStart=/opt/micro-paas/run.sh
+Restart=always
+WorkingDirectory=/opt/micro-paas
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

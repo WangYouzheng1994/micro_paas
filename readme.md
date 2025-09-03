@@ -7,14 +7,21 @@
 > 项目使用Poetry (version 2.1.4)开发的
 > python版本3.12
 
-# 打包与安装使用方式
+### 打包与安装使用方式
 
 ```shell
 poetry build # 打包
+# 打包命令执行后会在工程目录下生成dist目录，其中有.tar和.whl文件
+
+whl文件上传到服务器
 pip install dist/project-0.0.1-py3-none-any.whl
 ```
 
-# 本地调试
+### 服务器部署方式
+
+---
+
+## 本地调试
 ```shell
 # 再项目根目录执行，可以触发cli.py中的脚本。
 poetry run monitor check-all --config ./config/config.yaml
@@ -37,8 +44,6 @@ poetry lock # 根据toml文件生成lock文件
 
 ```
 
-
-
 ### vs code 资源更少。。适应适应熊迪们
 
 | 功能     | PyCharm            | VS Code (默认)                  |
@@ -51,3 +56,5 @@ poetry lock # 根据toml文件生成lock文件
 | 注释代码   | `Ctrl+/`           | `Ctrl+/`（Python 同样适用）         |
 | 多行编辑   | `Alt+J`            | `Ctrl+D` 或 `Ctrl+Alt+Down/Up` |
 | 跳转定义   | `Ctrl+B`           | `F12`                         |
+
+---

@@ -1,6 +1,7 @@
 """日志工具"""
 import logging, sys
 
+
 def get_logger(name="project"):
     logger = logging.getLogger(name)
     if not logger.handlers:

@@ -3,7 +3,6 @@
 import click
 import yaml
 
-from project.main import main
 from project.message.factory import build_sender
 from project.monitor.mysql.service_checker import MySQLServiceChecker
 
@@ -12,6 +11,7 @@ from project.monitor.mysql.service_checker import MySQLServiceChecker
 def cli():
     """统一监控入口"""
     pass
+
 
 @cli.command()
 @click.option("--config", default="config.yaml", help="配置文件路径")
@@ -27,7 +27,6 @@ def check_all(config):
 
     checker = MySQLServiceChecker(instances)
 
-
     alerts = []
     sender = build_sender(cfg.get("message", {}))
 
@@ -40,10 +39,6 @@ def check_all(config):
     if not alerts:
         sender.send("监控通过")
 
+
 if __name__ == "__main__":
     cli()
-
-
-
-
-
